@@ -1,4 +1,5 @@
 FLAGS="autostart"
+SHELL="$SHELL | sed 's/.*\/bin\///g'"
 
 all: install run
 
@@ -12,9 +13,9 @@ install:
 
 	# Adds autostart capabilities if decided
 	@if [[ "$(FLAGS)" == *"autostart"* ]]; then \
-		echo "termDash" >> '/home/$(USER)/.$(shell echo $SHELL | sed 's/.*\/bin\///g')rc'; \
+		echo "termDash" >> '/home/$(USER)/.$(SHELL)rc'; \
 	fi 
-
+.
 remove:
 	@echo "Removing termDash"
 	@sudo ./scripts/remove

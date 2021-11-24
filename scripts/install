@@ -7,4 +7,4 @@ fi
 
 cp termDash.py /usr/bin/termDash
 cp termDashCFG.py /usr/lib/python3.9/
-chown $(ls /home --color=none | tr '\n' '.' | sed 's/lost+found.//g;s/\.//g') /usr/lib/python3.9
+chown $(ls /home --color=none | tr '\n' '.' | sed 's/lost+found.//g;s/\.*//g') /usr/lib/python3.9

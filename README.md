@@ -1,45 +1,85 @@
-<a id="org76b86a4"></a>
+<a id="orgc08c443"></a>
 
 # termDash
 
-termDash is a handy little program, written in the Python 3 language, and is a small little dashboard for your terminal.
-
+termDash is a handy little program, written in the Python 3 language, and is a small little dashboard for your terminal, designed to be a utility to help people, as well as helping new users get used to the terminal.
 
 # Table of Contents
 
-1.  [termDash](#org76b86a4)
-    1.  [Intended Use](#orga754ff5)
-    2.  [Configuration](#org4038baf)
-    3.  [Compiling to C](#orgeadcb1e)
+1.  [termDash](#orgc08c443)
+    1.  [Configuration Options](#orge286326)
+        1.  [StatusBar<sub>CustomText</sub>](#orgf367878)
+        2.  [SplashText](#org13a671d)
+        3.  [Package Manager Settings](#org6a37a0b)
+        4.  [Skip<sub>ShellReturnText</sub>](#org373cba2)
+    2.  [License](#orgf00e278)
+
+<a id="orge286326"></a>
+
+## Configuration Options
+
+Configuration of termDash can be done by opening the `termDashCFG.py` file in a graphical text editor, or a terminal text editor, such as `nano` or `vim`.
 
 
-<a id="orga754ff5"></a>
+<a id="orgf367878"></a>
 
-## Intended Use
+### StatusBar<sub>CustomText</sub>
 
-termDash is intended to be used when you start the terminal, and would typically be placed in your `.shellrc` file, like so
+The variable `StatusBar_CustomText` referrs to the custom text on the status bar, the 3rd part of the status bar. By default it is set to
 
-```bash
-    ...................
-    export PS1="[\u@\h \W]$ "
-    alias vim="emacsclient -c -a 'emacs'" # Just some bantering
-    alias nano="vim" # Because Vim > Nano
+    StatusBar_CustomText=datetime.datetime.now().strftime("%A %d %B %Y")
 
-    python3 ~/termDash.py
-```
-
-termDash was also designed to be both a piece of eyecandy, and a piece of software to ease new users into the command line, as there aren&rsquo;t that many tools that are new-user friendly and command line based.
+And this will output the date and year, for example `Wednesday 24 November 2021`. You can change this formatting by taking a look at the valid `strftime` strings, which you can find on the [Python `strftime` Cheatsheet](https://strftime.org/).
 
 
-<a id="org4038baf"></a>
+<a id="org13a671d"></a>
 
-## Configuration
+### SplashText
 
-Configuration of termDash is done in a simple Python file, name `termDashCFG.py`. This file is also commented so that people aren&rsquo;t just guessing what it does. Currently, it&rsquo;s nothing that special, but does have some options, such as package managment settings - which are set to Debian/Ubuntu defaults.
+This variable referrs to the text displayed at the top of termDash, and by default it is set to
+
+    SplashText = "termDash from Kimitzuni"
+
+This can be anything, you can even make it the same as the `StatusBar_CustomText` Variable, simply by doing this
+
+    SplashText = StatusBar_CustomText
 
 
-<a id="orgeadcb1e"></a>
+<a id="org6a37a0b"></a>
 
-## Compiling to C
+### Package Manager Settings
 
-This is an optional step, but is included here. If you so choose to, you can compile termDash into a C Program via the help of `cython`. Simply install Cython via Pip, as well as the GNU C Compiler (gcc), and simply run the `make` command.
+The next 5 variables in the config file all refer to package management, and by default, they are set to Debian/Ubuntu defaults - The apt Package Manager
+
+    PackageManager="apt"
+    InstallSyntax="install"
+    UpdateSyntax="update"
+    UpgradeSyntax="upgrade"
+    SearchSyntax="search"
+
+However, if you are using, say Manjaro Linux (or any other Arch Linux based distribution), you should set them to this:
+
+    PackageManager="pacman"
+    InstallSyntax="-S"
+    UpdateSyntax="-Sy"
+    UpgradeSyntax="-Syu"
+    SearchSyntax="-Ss"
+
+
+<a id="org373cba2"></a>
+
+### Skip<sub>ShellReturnText</sub>
+
+This variable is a `bool`, meaning it can either be `True` or `False`. When set to `False`, and you select the *[S] Run the Shell* option, you will get a handy little piece of text telling you how to exit back to termDash
+
+    To return to termDash, type 'exit' or press CTRL + D
+    
+    [rtw@tuxedo ~]$
+
+
+<a id="orgf00e278"></a>
+
+## License
+
+termDash is licensed under the GNU General Public License, version 2.0
+

@@ -8,10 +8,10 @@ termDash is a handy little program, written in the Python 3 language, and is a s
 
 1.  [termDash](#orgc08c443)
     1.  [Configuration Options](#orge286326)
-        1.  [StatusBar<sub>CustomText</sub>](#orgf367878)
+        1.  [StatusBar_CustomText](#orgf367878)
         2.  [SplashText](#org13a671d)
         3.  [Package Manager Settings](#org6a37a0b)
-        4.  [Skip<sub>ShellReturnText</sub>](#org373cba2)
+        4.  [Skip_ShellReturnText](#org373cba2)
     2.  [License](#orgf00e278)
 
 <a id="orge286326"></a>
@@ -23,7 +23,7 @@ Configuration of termDash can be done by opening the `termDashCFG.py` file in a 
 
 <a id="orgf367878"></a>
 
-### StatusBar<sub>CustomText</sub>
+### StatusBar_CustomText
 
 The variable `StatusBar_CustomText` referrs to the custom text on the status bar, the 3rd part of the status bar. By default it is set to
 
@@ -68,7 +68,7 @@ However, if you are using, say Manjaro Linux (or any other Arch Linux based dist
 
 <a id="org373cba2"></a>
 
-### Skip<sub>ShellReturnText</sub>
+### Skip_ShellReturnText</sub>
 
 This variable is a `bool`, meaning it can either be `True` or `False`. When set to `False`, and you select the *[S] Run the Shell* option, you will get a handy little piece of text telling you how to exit back to termDash
 

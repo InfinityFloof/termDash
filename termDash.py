@@ -96,7 +96,7 @@ def draw(screen):
             print(f"What would you like to search for?")
             Package = input("$ ")
 
-            os.system(f"{config.PackageManager} {config.SearchSyntax}; sleep 5")
+            os.system(f"{config.PackageManager} {config.SearchSyntax} {Package}; sleep 5")
 
         cursor_x = max(0, cursor_x)
         cursor_x = min(width - 1, cursor_x)

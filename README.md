@@ -49,14 +49,15 @@ This can be anything, you can even make it the same as the `StatusBar_CustomText
 
 ### Package Manager Settings
 
-The next 5 variables in the config file all refer to package management, and by default, they are set to Debian/Ubuntu defaults - The apt Package Manager
+The next 6 variables in the config file all refer to package management, and by default, they are set to Debian/Ubuntu defaults - The apt Package Manager
 
     PackageManager="apt"
     InstallSyntax="install"
     UpdateSyntax="update"
     UpgradeSyntax="upgrade"
     SearchSyntax="search"
-
+    RemoveSyntax="remove"
+    
 However, if you are using, say Manjaro Linux (or any other Arch Linux based distribution), you should set them to this:
 
     PackageManager="pacman"
@@ -64,6 +65,7 @@ However, if you are using, say Manjaro Linux (or any other Arch Linux based dist
     UpdateSyntax="-Sy"
     UpgradeSyntax="-Syu"
     SearchSyntax="-Ss"
+    RemoveSyntax="-Runs"
 
 
 <a id="org373cba2"></a>

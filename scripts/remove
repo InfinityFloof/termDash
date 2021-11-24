@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ $EUID != 0 ]]; then
+	echo "Please run this as root via 'sudo'"
+	exit
+fi
+
+
+rm /usr/bin/termDash /usr/lib/python3.9/termDashCFG.py

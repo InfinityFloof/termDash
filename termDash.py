@@ -59,7 +59,7 @@ def draw(screen):
         elif k == ord('o'):
             screen.clear()
             curses.endwin()
-            os.system(f"$SHELL -c '{config.TerminalEditor} termDashCFG.py'")
+            os.system(f"$SHELL -c '{config.TerminalEditor} /usr/lib/python3.9/termDashCFG.py'")
 
         elif k == ord('x'):
             screen.clear()
